@@ -15,19 +15,19 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-app.post("/", (request, response) => {
+app.post("/", ({body: {username, alcohol, soft, comment, orderId}}, response) => {
     const text = 'Commande de ' +
-        request.body.username +
+        username +
         ': ' +
-        request.body.alcohol + (
-            request.body.soft ? ' + ' + request.body.soft : ''
+        alcohol + (
+            soft ? ' + ' + soft : ''
         ) + '. ' + (
-            request.body.comment ? 'Petites précisions : ' + request.body.comment + '. ' : ''
+            comment ? 'Petites précisions : ' + comment + '. ' : ''
         ) + 'Avec le sourire Cassandre ! (et tu dis merci)';
     const mailOptions = {
         from: process.env.GMAIL_EMAIL_FROM,
         to: process.env.GMAIL_EMAIL_TO,
-        subject: 'Cassapp commande',
+        subject: 'Cassapp commande n°' + orderId,
         text
     };
 
