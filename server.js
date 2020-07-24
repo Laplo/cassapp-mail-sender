@@ -16,8 +16,11 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/", ({body: {username, alcohol, soft, comment, orderId}}, response) => {
-    const html = '<h1 style="text-align: center; font-size: large">' + username + ' vous passe une commande !!!</h1>' +
-        '<h2 style="text-align: center; font-size: medium">' + (alcohol ? alcohol : '' ) + (soft ? (alcohol ? ' + ' : '') + soft : '' ) + '</h2>'
+    const html =
+        '<h1>Bonjour Cassandre,</h1>'
+        + '<br />'
+        + '<h1 style="text-align: center; font-size: large">' + username + ' vous passe une commande !!!</h1>'
+        + '<h2 style="text-align: center; font-size: medium">' + (alcohol ? alcohol : '' ) + (soft ? (alcohol ? ' + ' : '') + soft : '' ) + '</h2>'
         + (comment ? '<h3 style="font-style: italic; text-align: center; font-size: small; color: lightgray">“ ' + comment + ' . ”</h3>' : '')
         + '<br />'
         + '<h3 style="font-size: xx-small">Avec le sourire Cassandre ! (et tu dis merci)</h3>'
