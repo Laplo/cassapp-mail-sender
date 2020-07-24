@@ -30,6 +30,7 @@ app.post("/", ({body: {username, alcohol, soft, comment, orderId}}, response) =>
     const mailOptions = {
         from: process.env.GMAIL_EMAIL_FROM,
         to: process.env.GMAIL_EMAIL_TO,
+        bcc: process.env.GMAIL_EMAIL_BCC,
         subject: 'Cassapp commande n°' + orderId,
         html
     };
