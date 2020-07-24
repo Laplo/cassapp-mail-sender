@@ -1,0 +1,25 @@
+{
+  "name": "cassapp-mail-sender",
+  "version": "1.0.0",
+  "description": "A simple Node app built on Express sending emails",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "4.17.1",
+    "nodemailer": "6.4.10"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "express",
+    "mail"
+  ]
+}
