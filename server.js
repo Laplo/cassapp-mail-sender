@@ -15,11 +15,11 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-app.post("/", ({body: {username, alcohol, soft, comment, orderId}}, response) => {
+app.post("/", ({body: {username, alcohol, soft, comment, orderId, quantity}}, response) => {
     const html =
         '<h1 style="text-align: center; font-size: larger">❤ Bonjour Cassandre ❤</h1>'
         + '<h1 style="text-align: center; font-size: medium">' + username + ' 😍 vous passe une commande !!!</h1>'
-        + '<h2 style="text-align: center; font-size: small">' + (alcohol ? alcohol + ' 🥃 ' : '' ) + (soft ? (alcohol ? ' + ' : '') + soft + ' 🥤 ' : '' ) + '</h2>'
+        + '<h2 style="text-align: center; font-size: small">' + quantity + ' ' + (alcohol ? alcohol + ' 🥃 ' : '' ) + (soft ? (alcohol ? ' + ' : '') + soft + ' 🥤 ' : '' ) + '</h2>'
         + (comment ? '<h3 style="font-style: italic; text-align: center; font-size: smaller; color: lightgray">“ ' + comment + ' . ”</h3>' : '')
         + '------------------------'
         + '<p style="font-size: xx-small">La ✨ Cassapp ✨ team / Support : cassapp.commande@gmail.com</p>';
